@@ -1,0 +1,16 @@
+<aui-spinner-overlay active="vm.tracker.active()">
+    <h1>{{ ::vm.todo.title }}</h1>
+
+    <div class="panel">
+        <div class="panel-body">
+            <dl class="dl-horizontal">
+                <dt>Completed</dt>
+                <dd><aui-status status="{{ vm.todo.completed ? 'success' : '' }}"></dd>
+                <dt>URL</dt>
+                <dd>{{ ::vm.todo.url }}</dd>
+                <dt>Object</dt>
+                <dd><code>{{ ::vm.todo }}</code></dd>
+            </dl>
+        </div>
+    </div>
+</aui-spinner-overlay>

@@ -1,0 +1,50 @@
+{
+  "name": "ui-framework-seed",
+  "version": "0.1.0",
+  "description": "Apigee UI Framework seed project",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yegor Pomortsev <yegor@apigee.com>",
+  "private": true,
+  "devDependencies": {
+    "autoprefixer-loader": "^2.0.0",
+    "babel-core": "^5.1.9",
+    "babel-loader": "^5.0.0",
+    "babel-runtime": "^5.1.9",
+    "bower-webpack-plugin": "https://github.com/illicium/bower-webpack-plugin.git#master",
+    "concurrent-transform": "^1.0.0",
+    "css-loader": "^0.14.4",
+    "exports-loader": "^0.6.2",
+    "expose-loader": "^0.7.0",
+    "extract-text-webpack-plugin": "^0.8.1",
+    "file-loader": "^0.8.1",
+    "gulp": "^3.8.11",
+    "gulp-awspublish": "^2.0.0",
+    "gulp-changed": "^1.2.1",
+    "gulp-help": "^1.3.3",
+    "gulp-if": "^1.2.5",
+    "gulp-util": "^3.0.4",
+    "html-loader": "^0.3.0",
+    "html-webpack-plugin": "^1.2.0",
+    "imports-loader": "^0.6.3",
+    "jasmine-core": "^2.2.0",
+    "jscs": "^1.12.0",
+    "jscs-loader": "^0.1.0",
+    "jshint": "^2.6.3",
+    "jshint-loader": "^0.8.3",
+    "json-loader": "^0.5.1",
+    "less": "^2.4.0",
+    "less-loader": "^2.1.0",
+    "lodash": "^3.5.0",
+    "merge-defaults": "^0.2.1",
+    "ng-annotate-loader": "0.0.4",
+    "style-loader": "^0.12.2",
+    "url-loader": "^0.5.5",
+    "webpack": "^1.7.2",
+    "webpack-dev-server": "^1.7.0"
+  },
+  "dependencies": {
+    "bluebird": "^2.9.30"
+  }
+}

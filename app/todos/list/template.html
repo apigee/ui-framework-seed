@@ -1,0 +1,12 @@
+<h1>Todos</h1>
+
+<div class="panel">
+    <div class="panel-body">
+        <aui-spinner-overlay active="vm.tracker.active()">
+            <ul class="nav">
+                <li ng-repeat="todo in ::vm.todos | orderBy: 'order'"><a ui-sref="todos.todo({ todoId: todo.id })">{{ todo.title }}</a></li>
+            </ul>
+        </aui-spinner-overlay>
+    </div>
+</div>
+

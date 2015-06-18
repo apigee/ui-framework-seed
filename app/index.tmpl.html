@@ -1,0 +1,55 @@
+<!doctype html>
+<html ng-app="app" ng-strict-di {% if(o.htmlWebpackPlugin.files.manifest) { %}manifest="{%= o.htmlWebpackPlugin.files.manifest %}"{% } %}>
+<head>
+    <meta charset="utf-8">
+    <title ncy-breadcrumb-last="UI Framework Seed - {{ ncyBreadcrumbLabel }}">UI Framework Seed</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    {% for (var css in o.htmlWebpackPlugin.files.css) { %}
+    <link href="{%=o.htmlWebpackPlugin.files.css[css] %}" rel="stylesheet">
+    {% } %}
+    {% for (var chunk in o.htmlWebpackPlugin.files.chunks) { %}
+    <script src="{%=o.htmlWebpackPlugin.files.chunks[chunk].entry %}"></script>
+    {% } %}
+</head>
+<body>
+    <!--[if lt IE 11]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <nav class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header navbar-header-apigee">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand navbar-brand-apigee" ui-sref="home.welcome"><span class="text-hide">Apigee</span>&#8203;<span class="navbar-brand-text">{{ ::APP_NAME }}</span></a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="nav navbar-nav">
+                    <li ui-sref-active="active"><a ui-sref="home.welcome">Home</a></li>
+                    <li ui-sref-active="active"><a ui-sref="todos.list">Todos</a></li>
+                </ul>
+                <uaa-nav class="navbar-right"></uaa-nav>
+            </div>
+        </div>
+    </nav>
+
+    <aui-alerts></aui-alerts>
+
+    <div id="container" class="container-fluid">
+        <nav class="row">
+            <div class="col-md-9">
+                <ncy-breadcrumb></ncy-breadcrumb>
+            </div>
+        </nav>
+
+        <ui-view></ui-view>
+    </div>
+</body>
+</html>
