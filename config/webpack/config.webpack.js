@@ -70,7 +70,8 @@ module.exports = function(config, options) {
       // Generate index.html
       new HtmlWebpackPlugin({
         filename: 'index.html',
-        template: path.join(config.paths.app, 'index.tmpl.html')
+        template: path.join(config.paths.app, 'index.tmpl.html'),
+        buildOptions: options
       }),
 
       // bundle CSS into a single file
