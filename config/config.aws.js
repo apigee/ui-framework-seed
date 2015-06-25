@@ -2,6 +2,7 @@
 
 module.exports = function(config, options) {
   config.aws = {
+    sync: false,
     gzip: false,
     options: {
       params: {}

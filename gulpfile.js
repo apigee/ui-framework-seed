@@ -77,6 +77,9 @@ gulp.task('publish', function(done) {
     // If not specified it will set x-amz-acl to public-read by default
     .pipe(concurrentTransform(publisher.publish(config.aws.headers), 10))
 
+    // optionally sync the bucket (remove files not in current dist)
+    .pipe(gif(config.aws.sync, publisher.sync()))
+
     // create a cache file to speed up consecutive uploads
     .pipe(publisher.cache())
 
