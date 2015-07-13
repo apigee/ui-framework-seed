@@ -9,6 +9,7 @@ var gulp = require('gulp-help')(require('gulp')),
   gutil = require('gulp-util'),
   gif = require('gulp-if'),
   gawspublish = require('gulp-awspublish'),
+  gawspublishRouter = require('gulp-awspublish-router'),
   concurrentTransform = require("concurrent-transform");
 
 var webpack = require('webpack'),
@@ -70,12 +71,12 @@ gulp.task('publish', function(done) {
   var publisher = gawspublish.create(config.aws.options);
 
   return gulp.src(path.join(config.paths.dist, '**', '*'))
-    // optionally gzip and set Content-Encoding header
-    .pipe(gif(config.aws.gzip, gawspublish.gzip()))
+    // apply config by filename/path
+    .pipe(gawspublishRouter(config.aws.router))
 
     // publisher will add Content-Length, Content-Type and headers specified above
     // If not specified it will set x-amz-acl to public-read by default
-    .pipe(concurrentTransform(publisher.publish(config.aws.headers), 10))
+    .pipe(concurrentTransform(publisher.publish(config.aws.headers || {}), 10))
 
     // optionally sync the bucket (remove files not in current dist)
     .pipe(gif(config.aws.sync, publisher.sync()))

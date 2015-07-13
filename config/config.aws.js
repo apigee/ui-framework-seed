@@ -3,12 +3,28 @@
 module.exports = function(config, options) {
   config.aws = {
     sync: false,
-    gzip: false,
+
+    // gulp-awspublish-router
+    router: {
+      cache: {
+        cacheTime: 31536000 // 1 year by default
+      },
+      routes: {
+        '^index\.html$': {
+          gzip: true,
+          cacheTime: 0
+        },
+        '\\.(?:js|css|svg|ttf|eot)': {
+          gzip: true
+        },
+        '^.+$': {}
+      }
+    },
+
+    // gulp-awspublish
     options: {
       params: {}
     },
-    headers: {
-      'Cache-Control': 'max-age=315360000, no-transform, public'
-    }
+    headers: {}
   };
 };

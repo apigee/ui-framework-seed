@@ -21,6 +21,7 @@
     "file-loader": "^0.8.1",
     "gulp": "^3.8.11",
     "gulp-awspublish": "^2.0.0",
+    "gulp-awspublish-router": "^0.1.1",
     "gulp-changed": "^1.2.1",
     "gulp-help": "^1.3.3",
     "gulp-if": "^1.2.5",
