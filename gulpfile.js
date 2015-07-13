@@ -10,6 +10,7 @@ var gulp = require('gulp-help')(require('gulp')),
   gif = require('gulp-if'),
   gawspublish = require('gulp-awspublish'),
   gawspublishRouter = require('gulp-awspublish-router'),
+  gfilter = require('gulp-filter'),
   concurrentTransform = require("concurrent-transform");
 
 var webpack = require('webpack'),
@@ -66,11 +67,15 @@ gulp.task('test', function(done) {
 });
 
 gulp.task('publish', function(done) {
+  var filter = gfilter(['**/*', '!*.hot-update.{js,json}']);
+
   // create a new publisher using S3 options
   // http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#constructor-property
   var publisher = gawspublish.create(config.aws.options);
 
   return gulp.src(path.join(config.paths.dist, '**', '*'))
+    .pipe(filter)
+
     // apply config by filename/path
     .pipe(gawspublishRouter(config.aws.router))
 
