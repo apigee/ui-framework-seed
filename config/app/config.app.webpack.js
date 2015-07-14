@@ -24,119 +24,6 @@ module.exports = function(config, options) {
 
   // Libraries
 
-  // Enable extra loaders for dependencies that use ES6/ng-annotate/etc
-  // which are normally disabled for node_modules and bower_components
-  var jsLoader = _.find(config.webpack.module.loaders, { test: /\.js/ });
-  jsLoader.include.push(/\/ui-framework-directives/);
-
-  // angular
-  config.webpack.module.loaders.push({
-    test: /\/angular(?:\.min)?\.js$/,
-    loaders: [
-      'imports?jQuery=jquery',
-      'exports?angular',
-    ]
-  });
-
-  // angular-bootstrap
-  config.webpack.module.loaders.push({
-    test: /\/ui-bootstrap(?:-tpls)?(?:\.min)?\.js$/,
-    loaders: [
-      'imports?angular=angular',
-      'exports?"ui.bootstrap"'
-    ]
-  });
-
-  // angular-breadcrumb
-  config.webpack.module.loaders.push({
-    test: /\/angular-breadcrumb(?:\.min)?\.js$/,
-    loaders: [
-      'imports?angular=angular',
-      'exports?"ncy-angular-breadcrumb"'
-    ]
-  });
-
-  // angular-promise-tracker
-  config.webpack.module.loaders.push({
-    test: /\/promise-tracker\.js$/,
-    loaders: [
-      'imports?angular=angular',
-      'exports?"ajoslin.promise-tracker"'
-    ]
-  });
-
-  // angular-ui-router
-  config.webpack.module.loaders.push({
-    test: /\/angular-ui-router(?:\.min)?\.js$/,
-    loaders: ['imports?angular=angular']
-  });
-
-  // restangular
-  config.webpack.module.loaders.push({
-    test: /\/restangular(?:\.min)?\.js$/,
-    loaders: [
-      'imports?angular=angular&_=lodash',
-      'exports?"restangular"'
-    ]
-  });
-
-  /*
-  // Examples:
-
-  // angular-dashboard-framework
-  config.webpack.module.loaders.push({
-    test: /\/angular-dashboard-framework(?:\.min)?\.js$/,
-    loaders: [
-      'imports?angular=angular,angularBootstrap=angular-bootstrap,Sortable=Sortable',
-      'exports?"adf"'
-    ]
-  });
-
-  // angular-gravatar
-  config.webpack.module.loaders.push({
-    test: /\/angular-gravatar(?:\.min)?\.js$/,
-    loaders: [
-      'imports?angular=angular',
-      'exports?"ui.gravatar"'
-    ]
-  });
-
-  // angular-locker
-  config.webpack.module.loaders.push({
-    test: /\/angular-locker(?:\.min)?\.js$/,
-    loaders: [
-      'imports?define=>false&angular=angular',
-      'exports?"angular-locker"'
-    ]
-  });
-
-  // angular-mocks
-  config.webpack.module.loaders.push({
-    test: /\/angular-mocks(?:\.min)?\.js$/,
-    loaders: [
-      'imports?angular=angular',
-      'exports?angular.mock'
-    ]
-  });
-  // angular-ui-sortable
-  config.webpack.module.loaders.push({
-    test: /\/angular-ui-sortable\/sortable(?:\.min)?\.js$/,
-    loaders: [
-      'imports?angular=angular,jqueryUiSortable=jquery-ui/ui/sortable',
-      'exports?"ui.sortable"'
-    ]
-  });
-
-
-  // angular-datatables
-  config.webpack.module.loaders.push({
-    test: /(?:plugins\/[^\/]+)?\/angular-datatables(?:\.[^.]+)?\.js$/,
-    loaders: [
-      'imports?jQuery=datatables&angular=angular',
-      'exports?"datatables"'
-    ]
-  });
-
   // datatables
   // config.webpack.resolve.alias['datatables'] = 'datatables/media/js/jquery.dataTables';
   config.webpack.module.loaders.push({
@@ -159,16 +46,6 @@ module.exports = function(config, options) {
 
   // highcharts
   config.webpack.resolve.alias['highcharts'] = 'highstock';
-
-  // highcharts-ng
-  config.webpack.module.loaders.push({
-    test: /\/highcharts-ng(?:\.min)?\.js$/,
-    loaders: [
-      'imports?angular=angular,Highcharts=highcharts',
-      'exports?"highcharts-ng"'
-    ]
-  });
-
   config.webpack.module.loaders.push({
     test: /\/highcharts\/modules\/(?:[^\/]*)?\.js$/,
     loaders: [
@@ -188,49 +65,6 @@ module.exports = function(config, options) {
     test: /\/lodash\/index\.js$/,
     loaders: ['imports?define=>false'] // don't leak _ var into global
   });
-
-  // moment
-  config.webpack.plugins.push(new webpack.IgnorePlugin(/^\.\/locale$/, [/moment$/])); // don't bundle locales
-
-  // malhar-angular-dashboard
-  config.webpack.module.loaders.push({
-    test: /\/malhar-angular-dashboard(?:\.min)?\.js$/,
-    loaders: [
-      'imports?angular=angular,angularUiSortable=angular-ui-sortable,angularBootstrap=angular-bootstrap,_=lodash',
-      'exports?"ui.dashboard"'
-    ]
-  });
-
-  // ng-clip
-  config.webpack.resolve.alias['ng-clip'] = 'ng-clip/src/ngClip.js';
-  config.webpack.module.loaders.push({
-    test: /\/ngClip\.js$/,
-    loaders: [
-      'imports?ZeroClipboard=zeroclipboard',
-      'exports?"ngClip"'
-    ]
-  });
-
-  // angular-ui-grid
-  config.webpack.resolve.alias['angular-ui-grid'] = 'angular-ui-grid/ui-grid';
-  config.webpack.module.loaders.push({
-    test: /\/ui-grid(?:\.min)?\.js$/,
-    loaders: [
-      'imports?angular=angular',
-      'exports?"ui.grid"'
-    ]
-  });
-
-  // ng-grid
-  config.webpack.resolve.alias['ng-grid'] = 'ng-grid/build/ng-grid';
-  config.webpack.module.loaders.push({
-    test: /\/ng-grid(?:\.min|\.debug)?\.js$/,
-    loaders: [
-      'imports?angular=angular',
-      'exports?"ngGrid"'
-    ]
-  });
-  */
 
   return config;
 };

@@ -101,13 +101,8 @@ module.exports = function(config, options) {
         // JS (ES6)
         {
           test: /\.js/,
-          include: [
-            config.paths.app
-          ],
-          loaders: [
-            'ng-annotate?regex=^$', // disable short form injection
-            'babel?optional=runtime'
-          ]
+          include: [config.paths.app],
+          loaders: ['babel?optional=runtime']
         },
 
         // HTML
@@ -183,7 +178,7 @@ module.exports = function(config, options) {
     webpackConfig.debug = true;
     webpackConfig.output.pathinfo = true;
 
-    webpackConfig.devtool = 'cheap-source-map';
+    webpackConfig.devtool = 'cheap-module-source-map';
     // webpackConfig.profile = true;
   }
 
