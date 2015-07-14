@@ -49,6 +49,10 @@ module.exports = function(config, options) {
     cache: true,
 
     resolve: {
+      alias: {},
+
+      extensions: ['', '.js', '.jsx'],
+
       root: [
         config.paths.root,
         config.paths.components
@@ -59,9 +63,7 @@ module.exports = function(config, options) {
         'node_modules',
         'bower_components',
         'web_modules'
-      ],
-
-      alias: {}
+      ]
     },
 
     plugins: [
@@ -101,13 +103,13 @@ module.exports = function(config, options) {
         // JS (ES6)
         {
           test: /\.js/,
-          include: [
-            config.paths.app
-          ],
-          loaders: [
-            'ng-annotate?regex=^$', // disable short form injection
-            'babel?optional=runtime'
-          ]
+          include: [config.paths.app],
+          loaders: ['babel?optional=runtime']
+        },
+        {
+          test: /\.jsx/,
+          include: [config.paths.app],
+          loaders: ['babel?optional=runtime']
         },
 
         // HTML
@@ -211,6 +213,11 @@ module.exports = function(config, options) {
 
   if (options.hot) {
     webpackConfig.plugins.push(new HotModuleReplacementPlugin());
+
+    if (options.buildEnv === 'development') {
+      var jsxLoader = _.find(webpackConfig.module.loaders, { test: /\.jsx/ });
+      jsxLoader.loaders.unshift('react-hot');
+    }
   }
 
   return webpackConfig;

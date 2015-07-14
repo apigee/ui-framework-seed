@@ -40,13 +40,17 @@
     "less-loader": "^2.1.0",
     "lodash": "^3.5.0",
     "merge-defaults": "^0.2.1",
-    "ng-annotate-loader": "0.0.6",
+    "react-hot-loader": "^1.2.8",
     "style-loader": "^0.12.2",
     "url-loader": "^0.5.5",
     "webpack": "^1.7.2",
     "webpack-dev-server": "^1.7.0"
   },
   "dependencies": {
-    "bluebird": "^2.9.30"
+    "bluebird": "^2.9.30",
+    "react": "^0.13.3",
+    "react-bootstrap": "^0.23.7",
+    "react-router": "^1.0.0-beta3",
+    "react-router-bootstrap": "^0.17.2"
   }
 }
