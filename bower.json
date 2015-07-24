@@ -13,8 +13,8 @@
   ],
   "private": true,
   "dependencies": {
-    "angular": "1.4.2",
-    "angular-bootstrap": "~0.13.0",
+    "angular": "~1.4.3",
+    "angular-bootstrap": "~0.13.1",
     "angular-breadcrumb": "~0.4.0",
     "angular-cache": "~4.2.2",
     "angular-promise-tracker": "~2.1.0",
@@ -26,7 +26,7 @@
     "ui-framework-directives": "~0"
   },
   "resolutions": {
-    "angular": "1.4.2",
-    "angular-bootstrap": "~0.13.0"
+    "angular": "1.4.3",
+    "angular-bootstrap": "~0.13.1"
   }
 }
