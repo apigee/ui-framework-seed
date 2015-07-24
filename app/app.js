@@ -28,29 +28,37 @@ export default angular.module('app', [
 ])
   .constant('APP_NAME', 'UI Framework Seed')
   .constant('APP_VERSION', packageJson.version)
-  .config(/** @ngInject */ function($provide) {
+  .config(function($provide) {
+    'ngInject';
+
     const appEnvConstants = [
       'API_BASE_URL'
     ];
 
     appEnvConstants.forEach(key => $provide.value(key, appEnvConfig[key]));
   })
-  .config(/** @ngInject */ function($urlRouterProvider) {
+  .config(function($urlRouterProvider) {
+    'ngInject';
     $urlRouterProvider.otherwise('/');
   })
-  .config(/** @ngInject */ function($breadcrumbProvider) {
+  .config(function($breadcrumbProvider) {
+    'ngInject';
     $breadcrumbProvider.setOptions({
       includeAbstract: true
     });
   })
-  .config(/** @ngInject */ function($compileProvider, $httpProvider) {
+  .config(function($compileProvider, $httpProvider) {
+    'ngInject';
+
     if (__BUILD_ENV__ === 'production') {
       $compileProvider.debugInfoEnabled(false);
     }
 
     $httpProvider.useApplyAsync(true);
   })
-  .run(/** @ngInject */ function($rootScope, $breadcrumb, Restangular, APP_NAME, APP_VERSION, auiAlerts) {
+  .run(function($rootScope, $breadcrumb, Restangular, APP_NAME, APP_VERSION, auiAlerts) {
+    'ngInject';
+
     console.log(`${APP_NAME} ${APP_VERSION}`);
 
     $rootScope.APP_NAME = APP_NAME;

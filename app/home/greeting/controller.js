@@ -1,8 +1,8 @@
 'use strict';
 
 export default class GreetingCtrl {
-  /** @ngInject */
   constructor() {
+    'ngInject';
     this.subject = 'Apigee';
   }
 }

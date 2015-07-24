@@ -12,7 +12,9 @@ export default angular.module('app.home.greeting', [
   angularUiRouter,
   greetingmessage.name
 ])
-  .config(/** @ngInject */ function($stateProvider) {
+  .config(function($stateProvider) {
+    'ngInject';
+
     $stateProvider
       .state('home.greeting', {
         url: 'greeting',

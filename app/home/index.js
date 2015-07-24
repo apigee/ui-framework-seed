@@ -13,7 +13,9 @@ export default angular.module('app.home', [
   welcome.name,
   greeting.name
 ])
-  .config(/** @ngInject */ function($stateProvider) {
+  .config(function($stateProvider) {
+    'ngInject';
+
     $stateProvider
       .state('home', {
         abstract: true,

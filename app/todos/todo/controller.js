@@ -3,8 +3,9 @@
 import Promise from 'bluebird';
 
 export default class TodosListCtrl {
-  /** @ngInject */
   constructor(promiseTracker, todoBackendApi, todoId) {
+    'ngInject';
+
     this.todoId = todoId;
 
     const todoPromise = Promise.delay(todoBackendApi.getOne(todoId), 500);

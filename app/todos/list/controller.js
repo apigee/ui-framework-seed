@@ -1,8 +1,9 @@
 'use strict';
 
 export default class TodosListCtrl {
-  /** @ngInject */
   constructor(todoBackendApi, promiseTracker) {
+    'ngInject';
+
     const todosPromise = todoBackendApi.getList();
 
     todosPromise.then(todos => {

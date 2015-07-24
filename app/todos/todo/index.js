@@ -19,13 +19,16 @@ export default angular.module('app.todos.todo', [
   auistatus.name,
   todobackendapi.name
 ])
-  .config(/** @ngInject */ function($stateProvider) {
+  .config(function($stateProvider) {
+    'ngInject';
+
     $stateProvider
       .state('todos.todo', {
         url: '/{todoId}',
         template: TodoTmpl,
         resolve: {
-          todoId: /** @ngInject */ function($stateParams) {
+          todoId: function($stateParams) {
+            'ngInject';
             return $stateParams.todoId;
           }
         },

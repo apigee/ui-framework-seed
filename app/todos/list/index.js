@@ -14,7 +14,9 @@ export default angular.module('app.todos.list', [
   angularPromiseTracker,
   todobackendapi.name
 ])
-  .config(/** @ngInject */ function($stateProvider) {
+  .config(function($stateProvider) {
+    'ngInject';
+
     $stateProvider
       .state('todos.list', {
         url: '',

@@ -11,7 +11,9 @@ export default angular.module('app.todos', [
   list.name,
   todo.name
 ])
-  .config(/** @ngInject */ function($stateProvider) {
+  .config(function($stateProvider) {
+    'ngInject';
+
     $stateProvider
       .state('todos', {
         abstract: true,

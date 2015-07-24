@@ -8,7 +8,9 @@ import WelcomeTmpl from './template.html';
 export default angular.module('app.home.welcome', [
   angularUiRouter
 ])
-  .config(/** @ngInject */ function($stateProvider) {
+  .config(function($stateProvider) {
+    'ngInject';
+
     $stateProvider
       .state('home.welcome', {
         url: '',

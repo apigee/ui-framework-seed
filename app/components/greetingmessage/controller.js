@@ -3,8 +3,8 @@
 import _ from 'lodash';
 
 export default class GreetingMessageCtrl {
-  /** @ngInject */
   constructor() {
+    'ngInject';
     this.greetings = ['Hello', 'Greetings', 'Hola', 'Привет'];
   }
 

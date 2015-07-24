@@ -10,7 +10,8 @@ export default angular.module('app.todobackendapi', [
   angularCache,
   restangular
 ])
-  .factory('TodoBackendApiRestangular', /** @ngInject */ function(Restangular, API_BASE_URL) {
+  .factory('TodoBackendApiRestangular', function(Restangular, API_BASE_URL) {
+    'ngInject';
     return Restangular.withConfig(function(RestangularConfigurer) {
       RestangularConfigurer.setBaseUrl(API_BASE_URL);
     });

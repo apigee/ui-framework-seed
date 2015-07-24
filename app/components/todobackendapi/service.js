@@ -1,8 +1,9 @@
 'use strict';
 
 export default class TodoBackendApiService {
-  /** @ngInject */
   constructor(TodoBackendApiRestangular, CacheFactory) {
+    'ngInject';
+
     this.TodoBackendApiRestangular = TodoBackendApiRestangular;
 
     this.cache = CacheFactory('apiCache', {
