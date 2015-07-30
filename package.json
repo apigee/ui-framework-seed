@@ -23,7 +23,7 @@
     "gulp-awspublish": "^2.0.0",
     "gulp-awspublish-router": "^0.1.1",
     "gulp-changed": "^1.2.1",
-    "gulp-filter": "^2.0.2",
+    "gulp-filter": "^3.0.0",
     "gulp-help": "^1.3.3",
     "gulp-if": "^1.2.5",
     "gulp-util": "^3.0.4",
