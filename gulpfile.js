@@ -68,6 +68,10 @@ gulp.task('test', function(done) {
 });
 
 gulp.task('publish', function(done) {
+  if (!config.aws.options.params.Bucket) {
+    throw new Error('AWS bucket name not specified; make sure to set APP_ENV');
+  }
+
   var filter = gfilter(['**/*', '!*.hot-update.{js,json}']);
 
   // create a new publisher using S3 options
