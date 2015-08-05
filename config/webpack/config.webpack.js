@@ -2,7 +2,7 @@
 
 var path = require('path'),
   _ = require('lodash'),
-  _mergeDefaults = require('merge-defaults'),
+  mergeDefaults = require('merge-defaults'),
   gitRev = require('git-rev-sync'),
   webpack = require('webpack'),
   HtmlWebpackPlugin = require('html-webpack-plugin'),
@@ -11,7 +11,7 @@ var path = require('path'),
   HotModuleReplacementPlugin = require('webpack/lib/HotModuleReplacementPlugin');
 
 module.exports = function(config, options) {
-  options = _mergeDefaults(_.clone(options), {
+  options = mergeDefaults(_.clone(options), {
     webpack: {
       assets: {
         // asset output filename template
@@ -26,11 +26,11 @@ module.exports = function(config, options) {
   // see options.webpack.assets
   function assets(loaderConfig, assetOptions) {
     assetOptions = assetOptions || {};
-    assetOptions = _mergeDefaults(_.clone(assetOptions), options.webpack.assets);
+    assetOptions = mergeDefaults(_.clone(assetOptions), options.webpack.assets);
 
     var pathname = path.join(assetOptions.path, assetOptions.filename);
 
-    return _mergeDefaults(_.clone(loaderConfig), {
+    return mergeDefaults(_.clone(loaderConfig), {
       loaders: ['file?name=' + pathname]
     }, loaderConfig);
   }

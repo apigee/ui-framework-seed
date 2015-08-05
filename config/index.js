@@ -1,10 +1,10 @@
 'use strict';
 
 var _ = require('lodash');
-var _mergeDefaults = require('merge-defaults');
+var mergeDefaults = require('merge-defaults');
 
 module.exports = function(options) {
-  options = _mergeDefaults(_.clone(options), {
+  options = mergeDefaults(_.clone(options), {
     buildEnv: process.env.BUILD_ENV,
     appEnv: process.env.APP_ENV || 'default',
 
