@@ -45,6 +45,8 @@ Substitute environment variables as necessary.
 
 #### Deploy only (publish to S3)
 
+Make sure to [configure an AWS credentials profile](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html) and set the `AWS_PROFILE` environment variable appropriately.
+
     $ APP_ENV=prod AWS_PROFILE=default gulp publish
 
 #### Build and deploy
