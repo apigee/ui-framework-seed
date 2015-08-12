@@ -33,6 +33,10 @@ Gulp expects two environment variables to be set:
 
 Webpack will recompile and refresh the page on code changes.
 
+#### Run tests
+
+    $ APP_ENV=prod gulp test
+
 ### Production builds
 
 Substitute environment variables as necessary.

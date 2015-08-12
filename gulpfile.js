@@ -15,7 +15,8 @@ var gulp = require('gulp-help')(require('gulp')),
   runSequence = require('run-sequence');
 
 var webpack = require('webpack'),
-  WebpackDevServer = require('webpack-dev-server');
+  WebpackDevServer = require('webpack-dev-server'),
+  karma = require('karma');
 
 var config = require('./config')({
   hot: true
@@ -59,12 +60,10 @@ gulp.task('copy-static', function(done) {
 });
 
 gulp.task('test', function(done) {
-  /*
-  karma.start({
+  new karma.Server({
     configFile: path.join(__dirname, 'karma.conf.js'),
     singleRun: true
-  }, done);
-  */
+  }, done).start();
 });
 
 gulp.task('publish', function(done) {
