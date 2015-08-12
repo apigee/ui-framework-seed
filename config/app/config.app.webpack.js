@@ -34,7 +34,7 @@ module.exports = function(config, options) {
     test: /\/angular(?:\.min)?\.js$/,
     loaders: [
       'imports?jQuery=jquery',
-      'exports?angular',
+      'exports?angular'
     ]
   });
 
@@ -42,7 +42,7 @@ module.exports = function(config, options) {
   config.webpack.module.loaders.push({
     test: /\/ui-bootstrap(?:-tpls)?(?:\.min)?\.js$/,
     loaders: [
-      'imports?angular=angular',
+      'imports?angular',
       'exports?"ui.bootstrap"'
     ]
   });
@@ -51,7 +51,7 @@ module.exports = function(config, options) {
   config.webpack.module.loaders.push({
     test: /\/angular-breadcrumb(?:\.min)?\.js$/,
     loaders: [
-      'imports?angular=angular',
+      'imports?angular',
       'exports?"ncy-angular-breadcrumb"'
     ]
   });
@@ -60,7 +60,7 @@ module.exports = function(config, options) {
   config.webpack.module.loaders.push({
     test: /\/promise-tracker\.js$/,
     loaders: [
-      'imports?angular=angular',
+      'imports?angular',
       'exports?"ajoslin.promise-tracker"'
     ]
   });
@@ -68,14 +68,14 @@ module.exports = function(config, options) {
   // angular-ui-router
   config.webpack.module.loaders.push({
     test: /\/angular-ui-router(?:\.min)?\.js$/,
-    loaders: ['imports?angular=angular']
+    loaders: ['imports?angular']
   });
 
   // restangular
   config.webpack.module.loaders.push({
     test: /\/restangular(?:\.min)?\.js$/,
     loaders: [
-      'imports?angular=angular&_=lodash',
+      'imports?angular&_=lodash',
       'exports?"restangular"'
     ]
   });
@@ -97,7 +97,7 @@ module.exports = function(config, options) {
   config.webpack.module.loaders.push({
     test: /\/angular-dashboard-framework(?:\.min)?\.js$/,
     loaders: [
-      'imports?angular=angular,angularBootstrap=angular-bootstrap,Sortable=Sortable',
+      'imports?angular,angularBootstrap=angular-bootstrap,Sortable',
       'exports?"adf"'
     ]
   });
@@ -106,7 +106,7 @@ module.exports = function(config, options) {
   config.webpack.module.loaders.push({
     test: /\/angular-gravatar(?:\.min)?\.js$/,
     loaders: [
-      'imports?angular=angular',
+      'imports?angular',
       'exports?"ui.gravatar"'
     ]
   });
@@ -115,7 +115,7 @@ module.exports = function(config, options) {
   config.webpack.module.loaders.push({
     test: /\/angular-locker(?:\.min)?\.js$/,
     loaders: [
-      'imports?define=>false&angular=angular',
+      'imports?define=>false&angular',
       'exports?"angular-locker"'
     ]
   });
@@ -124,7 +124,7 @@ module.exports = function(config, options) {
   config.webpack.module.loaders.push({
     test: /\/angular-mocks(?:\.min)?\.js$/,
     loaders: [
-      'imports?angular=angular',
+      'imports?angular',
       'exports?angular.mock'
     ]
   });
@@ -133,7 +133,7 @@ module.exports = function(config, options) {
   config.webpack.module.loaders.push({
     test: /\/angular-ui-sortable\/sortable(?:\.min)?\.js$/,
     loaders: [
-      'imports?angular=angular,jqueryUiSortable=jquery-ui/ui/sortable',
+      'imports?angular,jqueryUiSortable=jquery-ui/ui/sortable',
       'exports?"ui.sortable"'
     ]
   });
@@ -142,7 +142,7 @@ module.exports = function(config, options) {
   config.webpack.module.loaders.push({
     test: /(?:plugins\/[^\/]+)?\/angular-datatables(?:\.[^.]+)?\.js$/,
     loaders: [
-      'imports?jQuery=datatables&angular=angular',
+      'imports?jQuery=datatables&angular',
       'exports?"datatables"'
     ]
   });
@@ -174,7 +174,7 @@ module.exports = function(config, options) {
   config.webpack.module.loaders.push({
     test: /\/highcharts-ng(?:\.min)?\.js$/,
     loaders: [
-      'imports?angular=angular,Highcharts=highcharts',
+      'imports?angular,Highcharts=highcharts',
       'exports?"highcharts-ng"'
     ]
   });
@@ -205,7 +205,7 @@ module.exports = function(config, options) {
   config.webpack.module.loaders.push({
     test: /\/malhar-angular-dashboard(?:\.min)?\.js$/,
     loaders: [
-      'imports?angular=angular,angularUiSortable=angular-ui-sortable,angularBootstrap=angular-bootstrap,_=lodash',
+      'imports?angular,angularUiSortable=angular-ui-sortable,angularBootstrap=angular-bootstrap,_=lodash',
       'exports?"ui.dashboard"'
     ]
   });
@@ -225,7 +225,7 @@ module.exports = function(config, options) {
   config.webpack.module.loaders.push({
     test: /\/ui-grid(?:\.min)?\.js$/,
     loaders: [
-      'imports?angular=angular',
+      'imports?angular',
       'exports?"ui.grid"'
     ]
   });
@@ -244,7 +244,7 @@ module.exports = function(config, options) {
   config.webpack.module.loaders.push({
     test: /\/ng-grid(?:\.min|\.debug)?\.js$/,
     loaders: [
-      'imports?angular=angular',
+      'imports?angular',
       'exports?"ngGrid"'
     ]
   });

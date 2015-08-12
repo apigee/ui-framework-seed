@@ -1,8 +1,7 @@
 'use strict';
 
 var path = require('path'),
-  url = require('url');
-var _ = require('lodash'),
+  _ = require('lodash'),
   _mergeDefaults = require('merge-defaults'),
   webpack = require('webpack'),
   HtmlWebpackPlugin = require('html-webpack-plugin'),
