@@ -82,6 +82,16 @@ module.exports = function(config, options) {
 
   /*
   // Examples:
+  
+  // angular-animate
+  config.webpack.resolve.alias['angular-animate'] = 'angular-animate/angular-animate';
+  config.webpack.module.loaders.push({
+    test: /\/angular-animate?(?:\.min)?\.js$/,
+    loaders: [
+      'imports?angular',
+      'exports?angular.module("ngAnimate")'
+    ]
+  });
 
   // angular-dashboard-framework
   config.webpack.module.loaders.push({
@@ -118,6 +128,7 @@ module.exports = function(config, options) {
       'exports?angular.mock'
     ]
   });
+
   // angular-ui-sortable
   config.webpack.module.loaders.push({
     test: /\/angular-ui-sortable\/sortable(?:\.min)?\.js$/,
@@ -126,7 +137,6 @@ module.exports = function(config, options) {
       'exports?"ui.sortable"'
     ]
   });
-
 
   // angular-datatables
   config.webpack.module.loaders.push({
@@ -168,7 +178,6 @@ module.exports = function(config, options) {
       'exports?"highcharts-ng"'
     ]
   });
-
   config.webpack.module.loaders.push({
     test: /\/highcharts\/modules\/(?:[^\/]*)?\.js$/,
     loaders: [
@@ -218,6 +227,15 @@ module.exports = function(config, options) {
     loaders: [
       'imports?angular=angular',
       'exports?"ui.grid"'
+    ]
+  });
+
+  // ui-router-extras
+  config.webpack.module.loaders.push({
+    test: /\/ct-ui-router-extras(?:\.min)?\.js$/,
+    loaders: [
+      'imports?define=>false&angularUiRouter=angular-ui-router',
+      'exports?"ct.ui.router.extras"'
     ]
   });
 
