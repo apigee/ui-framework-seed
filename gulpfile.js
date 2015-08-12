@@ -11,7 +11,8 @@ var gulp = require('gulp-help')(require('gulp')),
   gawspublish = require('gulp-awspublish'),
   gawspublishRouter = require('gulp-awspublish-router'),
   gfilter = require('gulp-filter'),
-  concurrentTransform = require("concurrent-transform");
+  concurrentTransform = require('concurrent-transform'),
+  runSequence = require('run-sequence');
 
 var webpack = require('webpack'),
   WebpackDevServer = require('webpack-dev-server');
@@ -102,4 +103,8 @@ gulp.task('dist',
           ['webpack', 'copy-static']);
 gulp.task('deploy',
           'Compile a distribution build and publish it to S3',
-          ['dist', 'publish']);
+          function(done) {
+            runSequence('dist',
+                        'publish',
+                        done);
+          });
