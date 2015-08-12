@@ -1,8 +1,11 @@
 'use strict';
 
 var path = require('path');
-var webpack = require('webpack');
-var _ = require('lodash');
+
+var webpack = require('webpack'),
+  _ = require('lodash'),
+  gitRev = require('git-rev-sync');
+
 var packageJson = require('../../package.json');
 
 module.exports = function(config, options) {
@@ -16,7 +19,7 @@ module.exports = function(config, options) {
 
   // Add a banner message to compiled webpack bundles
   var banner = _.compact([
-    packageJson.name + ' ' + packageJson.version + ' (' + options.buildEnv + '/' + options.appEnv + ')',
+    packageJson.name + ' ' + packageJson.version + '-' + gitRev.short() + ' (' + options.buildEnv + '/' + options.appEnv + ')',
     packageJson.description,
     packageJson.copyright
   ]).join('\n');

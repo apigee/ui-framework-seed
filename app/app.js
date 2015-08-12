@@ -1,4 +1,4 @@
-/* global __BUILD_ENV__ */
+/* global __BUILD_ENV__ __GIT_REV__ */
 'use strict';
 
 // actual config import path defined by webpack resolve alias
@@ -28,6 +28,7 @@ export default angular.module('app', [
 ])
   .constant('APP_NAME', 'UI Framework Seed')
   .constant('APP_VERSION', packageJson.version)
+  .constant('GIT_REV', __GIT_REV__)
   .config(function($provide) {
     'ngInject';
 
@@ -56,10 +57,10 @@ export default angular.module('app', [
 
     $httpProvider.useApplyAsync(true);
   })
-  .run(function($rootScope, $breadcrumb, Restangular, APP_NAME, APP_VERSION, auiAlerts) {
+  .run(function($rootScope, $breadcrumb, Restangular, APP_NAME, APP_VERSION, GIT_REV, auiAlerts) {
     'ngInject';
 
-    console.log(`${APP_NAME} ${APP_VERSION}`);
+    console.log(`${APP_NAME} ${APP_VERSION}-${GIT_REV}`);
 
     $rootScope.APP_NAME = APP_NAME;
 

@@ -3,6 +3,7 @@
 var path = require('path'),
   _ = require('lodash'),
   _mergeDefaults = require('merge-defaults'),
+  gitRev = require('git-rev-sync'),
   webpack = require('webpack'),
   HtmlWebpackPlugin = require('html-webpack-plugin'),
   BowerWebpackPlugin = require('bower-webpack-plugin'),
@@ -84,7 +85,8 @@ module.exports = function(config, options) {
       // constants, replaced in code at compile time
       new webpack.DefinePlugin({
         __BUILD_ENV__: JSON.stringify(options.buildEnv),
-        __APP_ENV__: JSON.stringify(options.appEnv)
+        __APP_ENV__: JSON.stringify(options.appEnv),
+        __GIT_REV__: JSON.stringify(gitRev.short())
       })
     ],
 

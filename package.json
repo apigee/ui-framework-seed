@@ -21,6 +21,7 @@
     "expose-loader": "^0.7.0",
     "extract-text-webpack-plugin": "^0.8.1",
     "file-loader": "^0.8.1",
+    "git-rev-sync": "^1.3.0",
     "gulp": "^3.8.11",
     "gulp-awspublish": "^2.0.0",
     "gulp-awspublish-router": "^0.1.1",
