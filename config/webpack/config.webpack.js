@@ -191,15 +191,12 @@ module.exports = function(config, options) {
     webpackConfig.entry = []; // TODO
   }
 
-  if (options.checkCodeStyle || options.buildEnv === 'production') {
-    // jshint/jscs
+  if (options.eslint || options.buildEnv === 'production') {
     webpackConfig.module.preLoaders.push({
       test: /\.js$/,
       exclude: /node_modules|bower_components/,
-      loaders: ['jshint', 'jscs']
+      loaders: ['eslint']
     });
-    // webpackConfig.jshint = { failOnHint: true };
-    // webpackConfig.jscs = { failOnHint: true };
   }
 
   if (typeof options.progress === 'function') {

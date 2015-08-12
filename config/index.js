@@ -8,10 +8,11 @@ module.exports = function(options) {
     buildEnv: process.env.BUILD_ENV,
     appEnv: process.env.APP_ENV || 'default',
 
-    // check code style (JSHint/JSCS) during build
-    // you can disable this if your editor has JSHint/JSCS support
-    // to avoid running them twice
-    checkCodeStyle: false
+    // enable ESLint checking during build
+    // you can disable this if your editor has ESLint support
+    // to avoid running them twice. This is always enabled
+    // for BUILD_ENV=production builds.
+    eslint: true
   });
 
   var config = {};

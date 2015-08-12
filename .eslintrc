@@ -1,0 +1,36 @@
+{
+  "env": {
+    "browser": true,
+    "mocha": true,
+    "node": true,
+    "es6": true
+  },
+  "ecmaFeatures": {
+    "modules": true
+  },
+  "rules": {
+    "comma-dangle": [1, "never"],
+    "no-cond-assign": [2, "except-parens"],
+    "no-const-assign": 2,
+    "no-empty": 1,
+    "no-negated-in-lhs": 2,
+    "no-undef": 2,
+    "no-unexpected-multiline": 2,
+    "use-isnan": 2,
+    "valid-typeof": 1,
+
+    "arrow-spacing": 1,
+    "camelcase": 1,
+    "comma-style": [1, "last"],
+    "curly": [1, "all"],
+    "guard-for-in": 1,
+    "no-bitwise": 1,
+    "no-implicit-coercion": 1,
+    "no-extra-parens": [1, "functions"],
+    "no-extra-semi": 1,
+    "no-irregular-whitespace": 1,
+    "no-underscore-dangle": 0,
+    "no-unused-vars": 0,
+    "quotes": [1, "single", "avoid-escape"]
+  }
+}
