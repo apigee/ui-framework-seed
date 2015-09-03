@@ -50,7 +50,6 @@ module.exports = function(config, options) {
 
     resolve: {
       root: [
-        config.paths.root,
         config.paths.components
       ],
 
